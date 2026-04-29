@@ -114,3 +114,14 @@ db.multas_com_infracao.updateMany(
 // * 10 → vira 0 a 9.999
 // $floor → vira 0 a 9
 // + 1 → vira 1 a 10
+
+db.pessoas.aggregate([
+    {
+         $lookup: {
+            from: "multas_com_infracao",
+            localField: "_id",
+            foreignField: "", // <- aqui está o ajuste
+            as: "dados_marca",
+        }
+    }
+])

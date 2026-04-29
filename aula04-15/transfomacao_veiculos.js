@@ -85,3 +85,9 @@ db.veiculos_marca.updateMany(
     {},
     { $unset: { marca: ""}}
 );
+
+db.veiculos_marca.updateMany(
+    {},
+    {$set: { multas : []}}
+)
+
