@@ -25,7 +25,7 @@ db.menu.updateOne(
     { $set: { price: 35 } }
 );
 
-// d) Remover "Beef" dos ingredientes do prato "Taco"
+// d) Remover "Beef" dos ingredientes do prato "Taco" e adicionar "Chicken".
 db.menu.updateOne(
   { _id: 3 },
   { $pull: { ingredients: "Beef" } }
